@@ -1,38 +1,210 @@
+* {
+    box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+    margin-top: 40px;
+    display: grid;
+}
+  
+body {
+    background-color: #4b1442e8;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+    margin: 20px 0 0;
+    color: #d6d290;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.game-container {
+    background-color: white;
+    padding: 20px 30px;
+    display: flex;
+    position: relative;
+    margin: auto;
+    height: 350px;
+    width: 450px;
+    border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+#reset-button {
+    max-height: 30px;
+    background-color: #d6d290;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 0;
+    position: relative;
+    left: 75px;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+    font-style: oblique;
+    font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#reset-button:active{
+    box-shadow: none;
+}
+
+.wrong-letters-container {
+    width: fit-content;
+    position: absolute;
+    bottom: -50px;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+.wrong-letters-container p {
+    margin: 0px 5px 0px;
+    font-size: 24px;
+    color: #d6d290;
+    display: inline-flex;
+}
+
+.wrong-letters-container span {
+    font-size: 24px;
+    display: inline-flex;
+}
+
+.word {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000;
+}
+
+.letter {
+    border-bottom: 3px solid #d6d290;
+    display: inline-flex;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 3px;
+    height: 50px;
+    width: 20px;
+}
+
+.popup-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* display: flex; */
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup {
+    max-width: 280px;
+    background: #d6d290;
+    color: #000;
+    line-height: 30px;
+    border-radius: 5px;
+    box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.2);
+    padding: 25px 20px;
+    text-align: center;
+    position: relative;
+    top: -170px;
+}
+
+.popup h2 {
+    margin: 0px;
+}
+
+.popup button {
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    font-weight: 700;
+    border: 0;
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+    box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.popup button:active {
+    transform: scale(0.98);
+}
+
+.popup button:focus {
+    outline: 0;
+}
+
+.notification-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 10px 10px;
+    padding: 15px 20px;
+    position: absolute;
+    top: -50px;
+    transition: transform 0.3s ease-in-out;
+    justify-self: center;
+}
+
+.notification-container p {
+    margin: 0;
+}
+
+.notification-container.show {
+    transform: translateY(50px);
+}
+
+#help-button {
+    max-height: 30px;
+    background-color: #2e1f2be8;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 0;
+    position: relative;
+    top: 40px;
+    left: 160px;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+    font-weight: 700;
+    color: #fff;
+}
+
+.help {
+    max-width: 600px;
+    background-color: #d6d290;
+    position: relative;
+    top: 80px;
+    padding: 20px;
+    border-radius: 10px;
+    color:#000;
+}
+
+.help h2 {
+    margin: 6px 0px;
+    color: #4b1442e8;
+}
+
+.help button {
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    font-weight: 700;
+    border: 0;
+    margin-top: 10px;
+    padding: 8px;
+    font-size: 16px;
+    box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.2);
 }

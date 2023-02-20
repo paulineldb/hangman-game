@@ -1,6 +1,36 @@
-# Getting Started with Create React App
+# Hangman Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was built using [Create React App](https://github.com/facebook/create-react-app).
+
+## About the game
+
+The objective of the game is to guess the hidden word by entering (typing) letters one by one.
+
+## Rules of the game
+
+- If you guess a correct letter, it will be revealed in the word.
+- If you guess an incorrect letter, a body part of the hangman will be added.
+- You have 10 incorrect guesses before the game is over and you lose.
+Good luck!
+
+## To use the game, follow the steps below:
+
+1. Open your terminal and type
+```
+$ git clone {the url to the GitHub repo}
+```
+
+2. Move to the new folder and typpe
+```
+cd {name of folder}
+$ npm install
+```
+This will install the required dependencies
+
+3. To run the app, enter
+```
+$ npm start
+```
 
 ## Available Scripts
 
